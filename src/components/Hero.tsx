@@ -55,21 +55,8 @@ export default function Hero() {
               <path d="M3 5l4 4 4-4" />
             </svg>
           </a>
-          <a
-            href="/klee-resume.pdf"
-            download
-            className="btn-primary w-full xs:w-auto justify-center min-h-[44px]"
-          >
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M7 1v9M4 7l3 3 3-3M2 11v2h10v-2" />
-            </svg>
-            下载简历
-          </a>
           <a href="mailto:gxep63@aliyun.com" className="btn-glass w-full xs:w-auto justify-center min-h-[44px]">
             联系我
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <path d="M7 2v8M3 6l4 4 4-4" />
-            </svg>
           </a>
         </div>
 
