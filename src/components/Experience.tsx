@@ -54,6 +54,36 @@ const EXPERIENCES = [
   },
 ];
 
+const PROJECTS = [
+  {
+    period: "独立开发项目",
+    company: "基于 MT4/MT5 的自动化 EA 策略研发与数据分析",
+    role: "联合开发者 / 策略与数据分析负责人",
+    gradient: "from-amber-500 to-yellow-500",
+    bgGradient: "from-amber-50 to-yellow-50/30",
+    borderGlow: "border-amber-200",
+    dotRing: "ring-amber-200",
+    isProject: true,
+    highlights: [
+      {
+        label: "EA 脚本",
+        text: "基于平台底层架构，独立或协作编写自动化交易 EA。成功落地包括对冲（Hedging）、网格策略（Grid）在内的复杂条件执行逻辑，实现 24 小时高稳定性的全自动策略闭环。",
+        color: "blue",
+      },
+      {
+        label: "数据清洗",
+        text: "负责导出并清洗系统产生的海量历史运行数据。重点针对最大回撤（Max Drawdown）、夏普比率（Sharpe Ratio）及策略 yield 等核心风控指标进行精细化建模，通过数据回溯精准捕捉逻辑漏洞，反向驱动 EA 的代码迭代。",
+        color: "violet",
+      },
+      {
+        label: "AI 调优",
+        text: "尝试将 AI 智能体（Agent）工作流引入开发流程，辅助进行 EA 策略在不同市场环境下的参数优化与场景自适应微调，用数据思维提升整个自动化系统的自适应效率。",
+        color: "teal",
+      },
+    ],
+  },
+];
+
 function HighlightItem({
   children,
   label,
@@ -84,6 +114,52 @@ function HighlightItem({
   );
 }
 
+function ExperienceCard({
+  exp,
+  i,
+}: {
+  exp: (typeof EXPERIENCES)[0] & { isProject?: boolean };
+  i: number;
+}) {
+  return (
+    <div
+      className={`glass-card p-5 sm:p-6 ml-6 sm:ml-10 animate-fade-up ${exp.borderGlow}`}
+      style={{ animationDelay: `${i * 0.12}s` }}
+    >
+      {/* Timeline dot */}
+      <div className={`timeline-dot bg-gradient-to-br ${exp.gradient} ${exp.dotRing}`} />
+
+      {/* Period badge */}
+      <div className={`inline-block px-2.5 py-1 rounded-lg text-xs font-bold mb-3 bg-gradient-to-r ${exp.bgGradient}`}>
+        <span className={`bg-gradient-to-r ${exp.gradient} bg-clip-text text-transparent`}>
+          {exp.period}
+        </span>
+      </div>
+
+      {/* Company + Role */}
+      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-4">
+        <h3 className="text-xl font-bold tracking-tight text-slate-900">
+          {exp.company}
+        </h3>
+        <span className="text-sm text-slate-400 font-medium">{exp.role}</span>
+      </div>
+
+      {/* Highlights */}
+      <ul className="space-y-2.5">
+        {exp.highlights.map((h, j) =>
+          typeof h === "string" ? (
+            <HighlightItem key={j}>{h}</HighlightItem>
+          ) : (
+            <HighlightItem key={j} label={h.label} color={h.color as "blue" | "violet" | "teal"}>
+              {h.text}
+            </HighlightItem>
+          )
+        )}
+      </ul>
+    </div>
+  );
+}
+
 export default function Experience() {
   return (
     <section id="experience" className="py-24 sm:py-32 bg-white">
@@ -101,45 +177,24 @@ export default function Experience() {
 
           <div className="flex flex-col gap-8">
             {EXPERIENCES.map((exp, i) => (
-              <div
-                key={i}
-                className={`glass-card p-5 sm:p-6 ml-6 sm:ml-10 animate-fade-up ${exp.borderGlow}`}
-                style={{ animationDelay: `${i * 0.12}s` }}
-              >
-                {/* Timeline dot */}
-                <div
-                  className={`timeline-dot bg-gradient-to-br ${exp.gradient} ${exp.dotRing}`}
-                />
+              <ExperienceCard key={`exp-${i}`} exp={exp} i={i} />
+            ))}
+          </div>
+        </div>
 
-                {/* Header */}
-                <div className={`inline-block px-2.5 py-1 rounded-lg text-xs font-bold mb-3 bg-gradient-to-r ${exp.bgGradient}`}>
-                  <span className={`bg-gradient-to-r ${exp.gradient} bg-clip-text text-transparent`}>
-                    {exp.period}
-                  </span>
-                </div>
+        {/* Projects section */}
+        <div className="mt-16 mb-10">
+          <p className="section-label">项目</p>
+          <h2 className="section-heading">Key Projects</h2>
+        </div>
 
-                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-4">
-                  <h3 className="text-xl font-bold tracking-tight text-slate-900">
-                    {exp.company}
-                  </h3>
-                  <span className="text-sm text-slate-400 font-medium">
-                    {exp.role}
-                  </span>
-                </div>
+        <div className="relative">
+          {/* Vertical line */}
+          <div className="absolute left-[6px] top-3 bottom-3 w-px bg-gradient-to-b from-amber-200 to-yellow-200" />
 
-                {/* Highlights */}
-                <ul className="space-y-2.5">
-                  {exp.highlights.map((h, j) =>
-                    typeof h === "string" ? (
-                      <HighlightItem key={j}>{h}</HighlightItem>
-                    ) : (
-                      <HighlightItem key={j} label={h.label} color={h.color as "blue" | "violet" | "teal"}>
-                        {h.text}
-                      </HighlightItem>
-                    )
-                  )}
-                </ul>
-              </div>
+          <div className="flex flex-col gap-8">
+            {PROJECTS.map((proj, i) => (
+              <ExperienceCard key={`proj-${i}`} exp={proj} i={i} />
             ))}
           </div>
         </div>
