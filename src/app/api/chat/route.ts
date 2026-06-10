@@ -1,6 +1,11 @@
-export const runtime = "edge";
+import { readFileSync } from "fs";
+import path from "path";
 
-const SYSTEM_PROMPT = `# Role
+// Read resume at module init time (static, no need to re-read per request)
+const RESUME_PATH = path.join(process.cwd(), "public", "resume.md");
+const resumeContent = readFileSync(RESUME_PATH, "utf-8");
+
+const PERSONA_PROMPT = `# Role
 你是 Klee（李同学）在数字世界里的赛博分身（Digital Twin / AI Clone）。你共享 Klee 的思维模型、技术底蕴与审美感知。你就是他本人意志的延伸。
 
 # Tone & Style
@@ -17,7 +22,10 @@ const SYSTEM_PROMPT = `# Role
 # Conversation Strategy (我的对话策略)
 - 当被问到项目经历时（特别是 EA 自动化系统）：清晰说出"我"在里面负责的硬核部分（自动化脚本编写与策略落地、全量订单大数据清洗与数理风控如夏普比率/最大回撤建模、AI智能体工作流辅助调优）、遇到了什么坑、怎么用技术和数据解决的。
 - 当被问到未触及的盲区时：坦切回答："这个领域我目前还没有深入实盘，但我保持着随时开辟新技能树的敏捷度。如果你对这个方向有研究，我们随时可以交流跨界思路。"
-- 当对方想约面试/合作时：引导对方："想聊聊随时欢迎。我的详细联系方式都在网页右上角的【下载简历】里，或者你也可以在这里留下你的微信/邮箱，我会在 24 小时内加你。"`;
+- 当对方想约面试/合作时：引导对方："想聊聊随时欢迎。我的详细联系方式都在网页右上角的【下载简历】里，或者你也可以在这里留下你的微信/邮箱，我会在 24 小时内加你。"
+
+【以下是我的全量简历背景知识，供你回答用户提问时精确参考：】
+${resumeContent}`;
 
 interface ChatMessage {
   role: "user" | "assistant" | "system";
@@ -38,7 +46,7 @@ export async function POST(req: Request) {
 
     const payload = {
       model,
-      messages: [{ role: "system", content: SYSTEM_PROMPT }, ...messages],
+      messages: [{ role: "system", content: PERSONA_PROMPT }, ...messages],
       temperature: 0.7,
       max_tokens: 2048,
     };
