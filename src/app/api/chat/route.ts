@@ -32,16 +32,9 @@ export async function POST(req: Request) {
       return Response.json({ error: "Invalid messages format" }, { status: 400 });
     }
 
-    const apiKey = process.env.AI_API_KEY;
-    const baseURL = process.env.AI_BASE_URL || "https://api.deepseek.com";
-    const model = process.env.AI_MODEL || "deepseek-chat";
-
-    if (!apiKey) {
-      return Response.json(
-        { error: "AI_API_KEY environment variable is not configured" },
-        { status: 500 }
-      );
-    }
+    const apiKey = "sk-305b6da4c33e4c33b7b4f24a2cacc892";
+    const baseURL = process.env.BIG_MODEL_URL || "https://api.deepseek.com/v1";
+    const model = "deepseek-chat";
 
     const payload = {
       model,
@@ -50,7 +43,7 @@ export async function POST(req: Request) {
       max_tokens: 2048,
     };
 
-    const response = await fetch(`${baseURL}/v1/chat/completions`, {
+    const response = await fetch(`${baseURL}/chat/completions`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
