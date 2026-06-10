@@ -6,7 +6,8 @@
       "Bash(git push *)",
       "Bash(curl -s -X POST http://localhost:3001/api/chat -H 'Content-Type: application/json' -d '{\"messages\":[{\"role\":\"user\",\"content\":\"你好，你是谁？\"}]}')",
       "Bash(git add *)",
-      "Bash(git commit -m 'feat: dual-track parallel evolution timeline component *)"
+      "Bash(git commit -m 'feat: dual-track parallel evolution timeline component *)",
+      "Bash(git commit -m 'revert: remove dual-track timeline from homepage *)"
     ]
   }
 }
