@@ -16,8 +16,8 @@ export default function Hero() {
       {/* Grid pattern */}
       <div className="absolute inset-0 pointer-events-none select-none bg-grid opacity-[0.025]" />
 
-      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
-        {/* Status badge — internship focused */}
+      <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+        {/* Status badge */}
         <div className="animate-fade-up mb-6">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-blue-50 to-violet-50 text-blue-700 border border-blue-200 shadow-sm">
             <span className="relative flex h-2 w-2">
@@ -35,20 +35,20 @@ export default function Hero() {
           <span className="gradient-text">Kaifeng Lee</span>
         </h1>
 
-        {/* Core Title / Golden Quote */}
-        <div className="animate-fade-up delay-200 mb-8">
+        {/* Core Title + Golden Quote */}
+        <div className="animate-fade-up delay-200 mb-6">
           <p className="text-sm sm:text-base font-semibold text-slate-700 tracking-tight">
-            AI-Driven Media Operations &amp; Growth Specialist
+            AI Technology &amp; New Media Operations Specialist
           </p>
           <div className="mt-3 inline-block mx-auto max-w-lg px-5 py-3 rounded-2xl bg-gradient-to-r from-blue-50/80 via-violet-50/80 to-teal-50/80 border border-blue-100/60 backdrop-blur-sm">
             <p className="text-sm sm:text-base font-medium text-slate-600 leading-relaxed italic">
-              「用 AI Agent 赋能内容全链路，用数据画布重构数字传媒的增长红利。」
+              「以硬核工程思维驾驭 AI 智能体，以敏锐数字网感操盘新媒体内容。」
             </p>
           </div>
         </div>
 
         {/* Title tags */}
-        <div className="animate-fade-up delay-200 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 mb-8 text-sm sm:text-base text-slate-500 font-medium">
+        <div className="animate-fade-up delay-200 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 mb-10 text-sm sm:text-base text-slate-500 font-medium">
           <span className="px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-semibold">新媒体全栈运营</span>
           <span className="dot-divider hidden sm:block" />
           <span className="px-3 py-1 rounded-full bg-violet-50 text-violet-600 text-xs font-semibold">AI 提示词工程师</span>
@@ -56,68 +56,57 @@ export default function Hero() {
           <span className="px-3 py-1 rounded-full bg-teal-50 text-teal-600 text-xs font-semibold">独立开发者 · 找实习中</span>
         </div>
 
-        {/* Detailed Bio — two paragraphs */}
-        <div className="animate-fade-up delay-300 max-w-2xl mx-auto text-left sm:text-center mb-10 space-y-5">
-          <p className="text-sm sm:text-base leading-relaxed text-slate-600">
-            在 <strong className="text-slate-800 font-semibold">AIGC 与数字传媒深度融合</strong>的浪潮中，
-            我立足于<strong className="text-slate-800 font-semibold">创意内容生产（Creative Content）</strong>
-            与<strong className="text-slate-800 font-semibold">现代数字化运营（Digital Operations）</strong>的交汇点。
-          </p>
-          <p className="text-sm sm:text-base leading-relaxed text-slate-600">
-            我专注于探索并将 <strong className="text-slate-800 font-semibold">AI Agent（智能体工作流）</strong>
-            深度嵌入传统新媒体的<strong className="text-slate-800 font-semibold">「选题-脚本-多渠道分发-数据回溯」全链路</strong>。
-            从独立操盘高质感视听内容项目（如《揽菊》等全案落地），到利用
-            <strong className="text-slate-800 font-semibold">AIGC 工具搭建批量内容生产矩阵</strong>，
-            我具备极强的审美感知力与技术落地能力。
-          </p>
-          <p className="text-sm sm:text-base leading-relaxed text-slate-600">
-            通过对用户行为、留存曲线及转化漏斗的<strong className="text-slate-800 font-semibold">精细化数据分析</strong>，
-            我致力于用<strong className="text-slate-800 font-semibold">「技术硬内功」</strong>为内容运营注入确定性的增长。
-          </p>
-          <p className="text-sm sm:text-base leading-relaxed text-slate-800 font-semibold">
-            我不只是内容的创作者，更是用 AI 降本增效、用数据驱动增长的数字化运营解题人。
-          </p>
-        </div>
+        {/* ===== About Me — Pure Text Flow ===== */}
+        <div className="animate-fade-up delay-300 text-left max-w-none space-y-6 mb-10">
 
-        {/* Tech Matrix — 2x2 glass grid */}
-        <div className="animate-fade-up delay-400 max-w-2xl mx-auto grid sm:grid-cols-2 gap-3 mb-10 text-left">
-          {[
-            {
-              emoji: "🤖",
-              title: "AI Agent & AIGC 工作流集成",
-              desc: "熟练运用 AI 智能体工具及高阶提示词工程（Prompt Engineering），实现文案、脚本及音视频内容的半自动化高效产出，擅长用技术构建新媒体内容的高频工业化流水线。",
-            },
-            {
-              emoji: "📊",
-              title: "数据驱动的精准增长运营",
-              desc: "对流量、点击率（CTR）、完播率及转化漏斗具备极高的数据敏锐度。擅长清洗用户行为大数据，通过精细化数据建模，反向指导内容选题与投放策略。",
-            },
-            {
-              emoji: "🎬",
-              title: "全栈传媒全案落地",
-              desc: "具备敏阅的网感与极佳的视觉审美。从前期的市场洞察、创意脑暴，到中后期的视听工业化打磨（涵盖分镜、剪辑、动效），具备独立跑通爆款项目全周期闭环的实战经验。",
-            },
-            {
-              emoji: "💻",
-              title: "现代数字化全栈工程技能",
-              desc: "基于 macOS 生态进行敏捷开发，熟练运用现代化前端及自动化脚本工具部署个人数字资产，能与技术团队、产品团队无缝对话。",
-            },
-          ].map((item) => (
-            <div
-              key={item.title}
-              className="glass-card p-4 flex items-start gap-3"
-            >
-              <span className="text-2xl shrink-0 leading-none mt-0.5">{item.emoji}</span>
-              <div>
-                <h4 className="text-sm font-bold text-slate-800 mb-1">{item.title}</h4>
-                <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
-              </div>
-            </div>
-          ))}
+          {/* Opening: cross-disciplinary + self-learning */}
+          <p className="text-sm sm:text-base leading-relaxed text-slate-600">
+            我是一名兼具<strong className="text-slate-900 font-bold">硬核 AI 技术落地能力</strong>与
+            <strong className="text-slate-900 font-bold">全栈新媒体运营思维</strong>的跨界复合型人才。
+            我拥有极其强悍的<strong className="text-slate-900 font-bold">自驱动与快速自学能力</strong>，
+            擅长在短时间内攻克未知领域的底层逻辑——无论是从零部署现代化的全栈网页，
+            还是深度独立钻研自动化脚本系统，我始终保持着敏捷进化的特质。
+          </p>
+
+          {/* Bridge sentence */}
+          <p className="text-sm sm:text-base leading-relaxed text-slate-500">
+            我的核心能力图谱由两个完全独立却同样扎实的板块构成：
+          </p>
+
+          {/* === AI Stack === */}
+          <div>
+            <h3 className="text-base sm:text-lg font-extrabold text-slate-800 mb-2">
+              🤖 AI 与自动化技术栈
+            </h3>
+            <p className="text-sm sm:text-base leading-relaxed text-slate-600">
+              我专注于探索<strong className="text-slate-900 font-bold">大语言模型（LLM）</strong>的落地应用。
+              熟练掌握<strong className="text-slate-900 font-bold">高阶提示词工程（Prompt Engineering）</strong>，
+              并能够独立构建<strong className="text-slate-900 font-bold">AI Agent（智能体工作流）</strong>。
+              我擅长利用技术手段搭建自动化流水线，将 AI 能力转化为真正能为业务提效、降本的
+              <strong className="text-slate-900 font-bold">工业化生产力工具</strong>。
+            </p>
+          </div>
+
+          {/* === New Media Stack === */}
+          <div>
+            <h3 className="text-base sm:text-lg font-extrabold text-slate-800 mb-2">
+              🎬 新媒体运营与内容栈
+            </h3>
+            <p className="text-sm sm:text-base leading-relaxed text-slate-600">
+              我拥有成熟的<strong className="text-slate-900 font-bold">视听语言审美</strong>与
+              <strong className="text-slate-900 font-bold">敏锐的网感</strong>，
+              具备独立操盘高质感视听内容全案落地的实战经验
+              （涵盖前期洞察、选题脑暴、分镜设计到中后期的全案剪辑与动效制作）。
+              同时，我是一个<strong className="text-slate-900 font-bold">实干型的数字化运营者</strong>，
+              凡事习惯用<strong className="text-slate-900 font-bold">客观数据说话</strong>，
+              通过对播放量、互动率、留存率等核心指标的精细化复盘，
+              精准捕捉用户心理，反向驱动创意的敏捷迭代。
+            </p>
+          </div>
         </div>
 
         {/* CTA buttons */}
-        <div className="animate-fade-up delay-500 flex flex-col xs:flex-row items-center justify-center gap-3">
+        <div className="animate-fade-up delay-400 flex flex-col xs:flex-row items-center justify-center gap-3">
           <a
             href="#experience"
             onClick={(e) => {
@@ -140,7 +129,7 @@ export default function Hero() {
         </div>
 
         {/* Contact chips */}
-        <div className="animate-fade-up delay-500 flex flex-wrap items-center justify-center gap-3 mt-8 text-xs text-slate-400">
+        <div className="animate-fade-up delay-400 flex flex-wrap items-center justify-center gap-3 mt-8 text-xs text-slate-400">
           <span className="inline-flex items-center gap-1.5">
             <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="3" width="10" height="8" rx="1"/><path d="M5 7h4M5 5h4"/></svg>
             13680992835

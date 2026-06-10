@@ -57,8 +57,8 @@ const EXPERIENCES = [
 const PROJECTS = [
   {
     period: "独立开发项目",
-    company: "基于 MT4/MT5 的自动化 EA 策略研发与数据分析",
-    role: "联合开发者 / 策略与数据分析负责人",
+    company: "AI 智能体辅助研发：基于 MT4/MT5 的自动化 EA 系统与数据回溯",
+    role: "联合开发者 / AI 策略与数据负责人",
     gradient: "from-amber-500 to-yellow-500",
     bgGradient: "from-amber-50 to-yellow-50/30",
     borderGlow: "border-amber-200",
@@ -66,18 +66,18 @@ const PROJECTS = [
     isProject: true,
     highlights: [
       {
-        label: "EA 脚本",
-        text: "基于平台底层架构，独立或协作编写自动化交易 EA。成功落地包括对冲（Hedging）、网格策略（Grid）在内的复杂条件执行逻辑，实现 24 小时高稳定性的全自动策略闭环。",
+        label: "AI 智能体",
+        text: "将最前沿的 AI Agent（智能体）工作流创造性地引入系统迭代中。利用大模型的逻辑推理与文本理解能力，辅助进行 EA 策略在不同市场环境下的参数自适应优化、代码自动化审计与场景微调，大幅提升了系统的自适应效率。",
         color: "blue",
       },
       {
-        label: "数据清洗",
-        text: "负责导出并清洗系统产生的海量历史运行数据。重点针对最大回撤（Max Drawdown）、夏普比率（Sharpe Ratio）及策略 yield 等核心风控指标进行精细化建模，通过数据回溯精准捕捉逻辑漏洞，反向驱动 EA 的代码迭代。",
+        label: "敏捷自学",
+        text: "凭借强悍的自驱力，在短时间内攻克 MQL 语言及底层系统逻辑，协作编写高稳定性的全自动 EA 脚本。成功落地包括对冲（Hedging）、网格（Grid）在内的复杂条件流式执行代码，实现 24 小时全自动闭环。",
         color: "violet",
       },
       {
-        label: "AI 调优",
-        text: "尝试将 AI 智能体（Agent）工作流引入开发流程，辅助进行 EA 策略在不同市场环境下的参数优化与场景自适应微调，用数据思维提升整个自动化系统的自适应效率。",
+        label: "数据回溯",
+        text: "负责系统运行产生的海量历史行为大数据的导出与清洗。重点针对最大回撤（Max Drawdown）、夏普比率（Sharpe Ratio）等核心指标进行精细化建模，通过硬核的数据回溯，反向修正 EA 底层算法的逻辑缺陷。",
         color: "teal",
       },
     ],
