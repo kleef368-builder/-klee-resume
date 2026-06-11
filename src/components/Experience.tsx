@@ -1,6 +1,6 @@
 const EXPERIENCES = [
   {
-    period: "2024.10 — 至今",
+    period: "2024.10 — 2025.05",
     company: "自主创业",
     role: "抖音珠宝店铺运营",
     gradient: "from-blue-500 to-blue-600",
