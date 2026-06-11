@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import ChatBot from "@/components/ChatBot";
+// ChatBot hidden — replaced by NeuralChat centerpiece in Hero
 import "./globals.css";
 
 const geistSans = Geist({
@@ -47,7 +47,6 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         {children}
-        <ChatBot />
       </body>
     </html>
   );
