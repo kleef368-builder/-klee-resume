@@ -88,35 +88,34 @@ export default function NeuralChat() {
   /* ── Render ───────────────────────────────────── */
   return (
     <div className="w-full max-w-[680px] mx-auto animate-fade-up delay-300">
-      {/* ═══════════════════════════════════════════════
-          HOLOGRAPHIC HALO BACKGROUND
-          ═══════════════════════════════════════════════ */}
       <div className="relative">
-        {/* Glow orbs behind the dialog */}
+        {/* ═══════════════════════════════════════════════
+            HOLOGRAPHIC HALO — aligned with global accent palette
+            ═══════════════════════════════════════════════ */}
         <div
           ref={haloRef}
           className={`
             absolute inset-0 -inset-x-20 -inset-y-16 pointer-events-none
             transition-all duration-700 ease-out
-            ${focused ? "opacity-100" : "opacity-50"}
+            ${focused ? "opacity-100" : "opacity-60"}
           `}
         >
-          {/* Blue orb */}
+          {/* Blue core — global accent */}
           <div className={`
             absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
             w-[500px] h-[500px] rounded-full
-            bg-gradient-to-tr from-blue-500/15 via-violet-500/10 to-transparent
+            bg-gradient-to-tr from-blue-400/12 via-violet-400/8 to-transparent
             blur-3xl
             transition-all duration-700
             ${focused ? "scale-110" : "scale-100"}
             ${loading ? "animate-pulse" : ""}
           `} />
-          {/* Purple ring */}
+          {/* Violet ring */}
           <div className={`
             absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
             w-[340px] h-[340px] rounded-full
-            border border-white/5
-            bg-gradient-to-bl from-violet-500/8 via-blue-500/5 to-teal-500/8
+            border border-blue-200/30
+            bg-gradient-to-bl from-violet-400/6 via-blue-400/4 to-teal-400/6
             blur-lg
             transition-all duration-700
             ${focused ? "scale-110 rotate-180" : "scale-100 rotate-0"}
@@ -124,21 +123,21 @@ export default function NeuralChat() {
           {/* Teal micro-dot */}
           <div className={`
             absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-            w-2 h-2 rounded-full bg-teal-400/60 blur-[2px]
+            w-2 h-2 rounded-full bg-teal-400/50 blur-[2px]
             transition-all duration-500
-            ${loading ? "scale-150 opacity-80" : "scale-100 opacity-40"}
+            ${loading ? "scale-150 opacity-80" : "scale-100 opacity-30"}
           `} />
         </div>
 
         {/* ═══════════════════════════════════════════════
-            MAIN DIALOG CARD
+            MAIN DIALOG — airy glass, light-theme aligned
             ═══════════════════════════════════════════════ */}
         <div className="
           relative
-          bg-zinc-950/40 backdrop-blur-xl
-          border border-white/10
+          bg-white/50 backdrop-blur-xl
+          border border-slate-200/60
           rounded-2xl
-          shadow-[0_30px_60px_-15px_rgba(0,0,0,0.9),0_0_80px_-20px_rgba(99,102,241,0.08)]
+          shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06),0_0_0_1px_rgba(0,0,0,0.02)]
           overflow-hidden
         ">
           {/* ── Messages area ── */}
@@ -154,17 +153,17 @@ export default function NeuralChat() {
               <div key={i} className="flex">
                 {msg.role === "assistant" ? (
                   <div className="flex gap-3 max-w-full">
-                    <span className="shrink-0 w-0.5 rounded-full bg-gradient-to-b from-blue-400/50 via-violet-400/30 to-transparent mt-1.5 self-stretch" />
-                    <p className="text-sm text-zinc-200 leading-relaxed whitespace-pre-wrap">
+                    <span className="shrink-0 w-0.5 rounded-full bg-gradient-to-b from-blue-400/60 via-violet-400/40 to-transparent mt-1.5 self-stretch" />
+                    <p className="text-sm text-slate-700 leading-relaxed whitespace-pre-wrap">
                       {msg.content}
                       {loading && i === messages.length - 1 && (
-                        <span className="inline-block w-[7px] h-4 bg-white/60 ml-0.5 align-text-bottom animate-pulse rounded-[1px]" />
+                        <span className="inline-block w-[7px] h-4 bg-blue-500/60 ml-0.5 align-text-bottom animate-pulse rounded-[1px]" />
                       )}
                     </p>
                   </div>
                 ) : (
                   <div className="ml-auto max-w-[85%]">
-                    <p className="text-sm text-white/75 leading-relaxed px-4 py-2.5 rounded-2xl bg-white/5 border border-white/5 whitespace-pre-wrap">
+                    <p className="text-sm text-slate-600 leading-relaxed px-4 py-2.5 rounded-2xl bg-slate-100/70 border border-slate-200/40 whitespace-pre-wrap">
                       {msg.content}
                     </p>
                   </div>
@@ -174,14 +173,14 @@ export default function NeuralChat() {
 
             {loading && messages[messages.length - 1]?.role !== "assistant" && (
               <div className="flex gap-3">
-                <span className="shrink-0 w-0.5 rounded-full bg-gradient-to-b from-blue-400/40 via-violet-400/20 to-transparent mt-1.5 self-stretch" />
-                <span className="text-sm text-zinc-500 italic">syncing...</span>
+                <span className="shrink-0 w-0.5 rounded-full bg-gradient-to-b from-blue-400/50 via-violet-400/30 to-transparent mt-1.5 self-stretch" />
+                <span className="text-sm text-slate-400 italic">syncing...</span>
               </div>
             )}
           </div>
 
           {/* ── Input area ── */}
-          <div className="px-4 sm:px-5 pb-4 sm:pb-5 pt-2 border-t border-white/5">
+          <div className="px-4 sm:px-5 pb-4 sm:pb-5 pt-2 border-t border-slate-200/60">
             <div className="flex items-center gap-3">
               <input
                 ref={inputRef}
@@ -195,7 +194,7 @@ export default function NeuralChat() {
                 disabled={loading}
                 className="
                   flex-1 bg-transparent
-                  text-sm text-white placeholder-zinc-500
+                  text-sm text-slate-800 placeholder-slate-400
                   py-3 px-1
                   focus:outline-none
                   disabled:opacity-30
@@ -206,9 +205,9 @@ export default function NeuralChat() {
                 disabled={loading || !input.trim()}
                 className="
                   shrink-0 w-9 h-9 rounded-xl
-                  bg-white/6 border border-white/8
-                  text-zinc-400
-                  hover:text-white hover:bg-white/10 hover:border-violet-400/30
+                  bg-slate-100 border border-slate-200
+                  text-slate-400
+                  hover:text-blue-600 hover:bg-blue-50 hover:border-blue-200
                   disabled:opacity-20 disabled:cursor-not-allowed
                   transition-all duration-200
                   flex items-center justify-center
@@ -223,7 +222,7 @@ export default function NeuralChat() {
 
             {/* Subtle hint text */}
             {!hasChatted && (
-              <p className="text-[11px] text-zinc-600 text-center mt-1">
+              <p className="text-[11px] text-slate-400 text-center mt-1">
                 按下 Enter 发送 · 支持中文对话
               </p>
             )}
