@@ -6,7 +6,7 @@ const NAV_ITEMS = [
   { id: "hero", label: "首页" },
   { id: "experience", label: "经历" },
   { id: "ai-project", label: "AI 项目" },
-  { id: "honors", label: "荣誉" },
+  { id: "projects", label: "项目" },
   { id: "skills", label: "技能" },
 ];
 
